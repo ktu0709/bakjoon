@@ -1,1 +1,27 @@
+#include<iostream>
+#include<algorithm>
+#define _CRT_SECURE_NO_WARNINGS
 
+using namespace std;
+
+int main()
+{
+	int n;
+	scanf("%d", &n);
+	int* array = new int[n];
+
+	for (int i = 0; i < n; i++) {
+		scanf("%d", array + i);
+	}
+	sort(array, array + n);
+
+	int value = 0;
+	for (int i = 0; i < n; i++)
+	{
+		value += (n - i) * array[i];
+	}
+	cout << value<<endl;
+
+	delete[] array;
+	return 0;
+}
